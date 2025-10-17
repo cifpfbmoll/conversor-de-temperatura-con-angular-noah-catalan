@@ -1,0 +1,32 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="card">
+  <div class="row">
+    <input
+      class="field"
+      type="text"
+      inputmode="decimal"
+      placeholder="0.00"
+      formControlName="value"
+      aria-label="Valor de temperatura"
+    />
+
+    <select class="field" formControlName="from" aria-label="Unidad origen">
+      <option value="" disabled selected>Desde</option>
+      @for (u of units; track u) {
+        <option [value]="u">{{ u }}</option>
+      }
+    </select>
+
+    <select class="field" formControlName="to" aria-label="Unidad destino">
+      <option value="" disabled selected>Hacia</option>
+      @for (u of units; track u) {
+        <option [value]="u">{{ u }}</option>
+      }
+    </select>
+
+    <button class="convert" type="submit" [disabled]="form.invalid">Convertir</button>
+  </div>
+
+  <div class="result" *ngIf="result as r">
+    <p class="ok">{{ r.input }} {{ r.from }} es {{ r.output }} {{ r.to }}</p>
+  </div>
+</form>

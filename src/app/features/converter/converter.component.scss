@@ -1,0 +1,86 @@
+/* --- Paleta de colores de Noah Catalán --- */
+$azul-principal: #007bff;          // Un azul moderno y amigable
+$azul-oscuro-hover: #0056b3;     // Para interactividad
+$verde-exito: #28a745;            // Un verde claro para el resultado
+$gris-borde: #ced4da;            // Un gris suave para los bordes
+$sombra-suave: rgba(0, 0, 0, 0.15); // Una sombra sutil para dar profundidad
+$texto-principal: #212529;         // Color de texto principal
+$texto-blanco: #ffffff;           // Para el texto del botón
+
+/* --- Estilos del Componente --- */
+
+// Contenedor principal del conversor
+.card {
+  background-color: $texto-blanco;
+  border: 1px solid #e9ecef; // Borde más suave
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 720px;
+  box-shadow: 0 6px 20px $sombra-suave; // Sombra más pronunciada
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    transform: translateY(-4px); // Efecto de elevación sutil
+    box-shadow: 0 10px 25px $sombra-suave;
+  }
+}
+
+// Fila que contiene los campos del formulario
+.row {
+  display: flex;
+  gap: 16px; // Un poco más de espacio
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+// Estilo para los campos de input y select
+.field {
+  padding: 12px 14px;
+  border: 1px solid $gris-borde;
+  border-radius: 8px;
+  font-size: 16px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+
+  // Efecto de foco para resaltar el campo activo
+  &:focus {
+    outline: none;
+    border-color: $azul-principal;
+    box-shadow: 0 0 0 3px rgba($azul-principal, 0.25);
+  }
+}
+
+// Botón de "Convertir"
+.convert {
+  background: $azul-principal; // Usamos nuestro azul
+  color: $texto-blanco;
+  font-weight: bold;
+  border: 0;
+  padding: 12px 24px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  // Estilo al pasar el ratón (si no está deshabilitado)
+  &:not(:disabled):hover {
+    background: $azul-oscuro-hover;
+  }
+
+  // Estilo cuando el botón está deshabilitado
+  &:disabled {
+    background-color: #adb5bd; // Un gris claro
+    cursor: not-allowed;
+    opacity: 0.7; // Un poco de opacidad en lugar de 0.5
+  }
+}
+
+// Texto del resultado
+.result {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+// Clase específica para el resultado exitoso (antes .ok)
+.ok {
+  color: $verde-exito;
+}
