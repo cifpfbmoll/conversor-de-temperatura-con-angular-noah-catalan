@@ -57,5 +57,5 @@ Se realizó una refactorización completa de los estilos del componente converso
     5.  **Texto de Resultado (`.result`)**: Se ajustó el tamaño de la fuente y se le aplicó el color verde de la paleta para indicar un resultado exitoso.
 
 ### Vista final
-![Vista final de la aplicación](vista-final.png)
+![Vista final de la aplicación](vista-conversor.png)
 
